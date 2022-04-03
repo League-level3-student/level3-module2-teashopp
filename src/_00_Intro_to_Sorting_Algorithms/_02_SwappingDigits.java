@@ -6,21 +6,9 @@ class _02_SwappingDigits {
 	// swapped.
 	public static void swapArrayOfTwo(int[] arr) {
 
-		for (int i = 0; i < arr.length; i++) {
-
-			for (int j = 0; j < arr.length; j++) {
-
-				if (arr[j] > arr[j + 1]) {
-
-					int nk = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = nk;
-
-				}
-
-			}
-
-		}
+		int n1 = arr[0];
+		arr[0] = arr[1];
+		arr[1] = n1;
 
 	}
 
@@ -33,11 +21,11 @@ class _02_SwappingDigits {
 
 			for (int j = 0; j < arr.length; j++) {
 
-				if (arr[j] > arr[j + 1]) {
+				if (arr[j] > arr[i]) {
 
-					int nk = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = nk;
+					int n2 = arr[j];
+					arr[j] = arr[i];
+					arr[i] = n2;
 
 				}
 
@@ -50,24 +38,27 @@ class _02_SwappingDigits {
 	// 3. Complete the method so that it finds the middle number in the array.
 	// *Hint* it helps to sort it first.
 	// *Double Hint* Use the method you already wrote in step 2 to sort it
-	public static int findMiddle(int[] arr) {
-		
+	public static void findMiddle(int[] arr) {
+
+		int n3;
+
 		for (int i = 0; i < arr.length; i++) {
 
 			for (int j = 0; j < arr.length; j++) {
 
-				if (arr[j] > arr[j + 1]) {
+				if (arr[j] > arr[i]) {
 
-					int nk = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = nk;
+					n3 = arr[j];
+					arr[j] = arr[i];
+					arr[i] = n3;
+
+					int place = i / 2;
+					n3 = arr[place];
 
 				}
 
 			}
 
 		}
-		
-		return;
 	}
 }

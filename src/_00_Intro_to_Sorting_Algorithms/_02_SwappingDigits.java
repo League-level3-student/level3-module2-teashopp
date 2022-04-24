@@ -38,9 +38,9 @@ class _02_SwappingDigits {
 	// 3. Complete the method so that it finds the middle number in the array.
 	// *Hint* it helps to sort it first.
 	// *Double Hint* Use the method you already wrote in step 2 to sort it
-	public static void findMiddle(int[] arr) {
+	public static int findMiddle(int[] arr) {
 
-		int n3;
+		int n3 = 0;
 
 		for (int i = 0; i < arr.length; i++) {
 
@@ -52,13 +52,16 @@ class _02_SwappingDigits {
 					arr[j] = arr[i];
 					arr[i] = n3;
 
-					int place = i / 2;
-					n3 = arr[place];
-
 				}
+				
+				int place = i / 2;
+				n3 = arr[place];
 
 			}
 
 		}
+		
+		return n3;
+				
 	}
 }

@@ -1,5 +1,9 @@
 package _00_Intro_to_Sorting_Algorithms;
 
+import java.awt.Rectangle;
+import java.awt.Window;
+import java.util.Random;
+
 import processing.core.PApplet;
 
 /*
@@ -38,43 +42,78 @@ import processing.core.PApplet;
  *     mousePressed variable
  */
 public class _03_VisualArraySorter extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
+	static final int WIDTH = 600;
+	static final int HEIGHT = 400;
+	int[] arr;
 
-    @Override
-    public void settings() {
-        
-    }
+	@Override
+	public void settings() {
 
-    @Override
-    public void setup() {
-        
-    }
+		size(600, 400);
 
-    @Override
-    public void draw() {
-        
-    }
+	}
 
-    static public void main(String[] passedArgs) {
-        PApplet.main(_03_VisualArraySorter.class.getName());
-    }
-    
-    /*********************** DO NOT MODIFY THE CODE BELOW ********************/
-    
-    int startIndex = 1;
+	@Override
+	public void setup() {
 
-    void stepSort(int[] arr) {
-      for (int i = startIndex; i < arr.length; i++) {
-        if (arr[i - 1] > arr[i]) {
-          int t = arr[i];
-          arr[i] = arr[i - 1];
-          arr[i - 1] = t;
+		arr = new int[50];
+		randomizer();
 
-          startIndex = i;
-          return;
-        }
-      }
-      startIndex = 1;
-    }
+	}
+
+	@Override
+	public void draw() {
+
+		noStroke();
+
+		background((int) random(255), (int) random(255), (int) random(255));
+		fill((int) random(255), (int) random(255), (int) random(255));
+
+		for (int i = 0; i < arr.length; i++) {
+
+			rect(i * (WIDTH / arr.length), HEIGHT, WIDTH / arr.length, -arr[i]);
+
+		}
+
+		stepSort(arr);
+
+		if (mousePressed == true) {
+
+			randomizer();
+
+		}
+
+	}
+
+	static public void main(String[] passedArgs) {
+		PApplet.main(_03_VisualArraySorter.class.getName());
+	}
+
+	/*********************** DO NOT MODIFY THE CODE BELOW ********************/
+
+	int startIndex = 1;
+
+	void randomizer() {
+
+		for (int i = 0; i < arr.length; i++) {
+
+			arr[i] = (int) random(500);
+
+		}
+
+	}
+
+	void stepSort(int[] arr) {
+		for (int i = startIndex; i < arr.length; i++) {
+			if (arr[i - 1] > arr[i]) {
+				int t = arr[i];
+				arr[i] = arr[i - 1];
+				arr[i - 1] = t;
+
+				startIndex = i;
+				return;
+			}
+		}
+		startIndex = 1;
+	}
 }

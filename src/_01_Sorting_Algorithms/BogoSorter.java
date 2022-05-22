@@ -16,6 +16,7 @@ public class BogoSorter extends Sorter {
 	 * finished; if no, go to step 2. STEP 2. Take two random elements in the array
 	 * and swap them. STEP 3. Go back to step 1.
 	 */
+
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
 
@@ -33,20 +34,35 @@ public class BogoSorter extends Sorter {
 				if (array[j] > array[i]) {
 
 					random = new Random();
+					int rand = random.nextInt(array.length - 1) + 1;
+
 					random0 = new Random();
-					int rand = random.nextInt(j - i) + i;
-					int rand0 = random0.nextInt(j - i) + i;
+					int rand0 = random0.nextInt(array.length - 1) + 1;
+
+					
+					index = rand;
+					index0 = rand0;
+					
 
 				}
 
-				int temp = array[index];
-				int temp2 = array[index0];
+				/*
+				int temp1 = array[i];
+				array[i] = array[index];
+				array[index] = temp1;
+
+				int temp2 = array[j];
+				array[j] = array[index0];
+				array[index0] = temp2;
+				*/
+				
+				
 
 			}
 
-		}
+			display.updateDisplay();
 
-		display.updateDisplay();
+		}
 
 	}
 

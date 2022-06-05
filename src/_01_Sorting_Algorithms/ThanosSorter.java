@@ -43,8 +43,30 @@ public class ThanosSorter extends Sorter {
      * elements away randomly until half (in this case (n-1)/2) remain. The
      * algorithm is up to you!
      */
-    @Override
+	@SuppressWarnings("null")
+	@Override
     void sort(int[] arr, SortingVisualizer display) {
+    	
+    	for (int i = 0; i < arr.length; i++) {
+    		    		
+    		for (int j = 0; j < arr.length; j++) {
+				
+    			if(arr[i] > arr[j]) {
+    				
+    				int thanos = i / 2;
+    				
+    				for (int k = 0; k < thanos; k++) {
+    					
+    					int temp = (Integer) null;
+    					arr[k] = temp;
+						
+					}
+    				
+    			}
+    			
+			}
+			
+		}
         
     }
 }

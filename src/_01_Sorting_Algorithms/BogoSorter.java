@@ -50,8 +50,8 @@ public class BogoSorter extends Sorter {
 				 int temp2 = array[index0]; 
 				 array[j] = array[index0];
 				 
-				 array[i] = temp2;
-				 array[j] = temp1;
+				 array[index] = temp2;
+				 array[index0] = temp1;
 
 			}
 

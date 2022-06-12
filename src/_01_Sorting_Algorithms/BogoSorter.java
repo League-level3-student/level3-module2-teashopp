@@ -24,7 +24,7 @@ public class BogoSorter extends Sorter {
 
 			int index = i;
 
-			for (int j = 0; j > array.length; j++) {
+			for (int j = 0; j < array.length; j++) {
 
 				int index0 = j;
 
@@ -32,26 +32,22 @@ public class BogoSorter extends Sorter {
 
 					Random random = new Random();
 					int rand = random.nextInt(array.length - 1) + 1;
+					index = rand;
 
 					Random random0 = new Random();
 					int rand0 = random0.nextInt(array.length - 1) + 1;
-
-					index = rand;
 					index0 = rand0;
-					
-					System.out.println(j);
 
 				}
 
-				
-				 int temp1 = array[i]; 			 
-				 array[i] = array[index];
-				 
-				 int temp2 = array[index0]; 
-				 array[j] = array[index0];
-				 
-				 array[index] = temp2;
-				 array[index0] = temp1;
+				int temp1 = array[i];
+				array[i] = array[index];
+
+				int temp2 = array[index0];
+				array[j] = array[index0];
+
+				array[index] = temp2;
+				array[index0] = temp1;
 
 			}
 

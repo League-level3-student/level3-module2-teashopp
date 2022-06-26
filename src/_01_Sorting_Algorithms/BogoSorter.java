@@ -39,16 +39,13 @@ public class BogoSorter extends Sorter {
 					index0 = rand0;
 
 				}
-
-				int temp1 = array[i];
-				array[i] = array[index];
-
-				int temp2 = array[index0];
-				array[j] = array[index0];
-
-				array[index] = temp2;
-				array[index0] = temp1;
-
+				
+				int temp = array[index];
+				int temp0 = array[index0];
+				
+				array[index] = temp0;
+				array[index0] = temp;
+				
 			}
 
 			display.updateDisplay();

@@ -45,9 +45,9 @@ public class ThanosSorter extends Sorter {
 
 			for (int j = 0; j < arr.length; j++) {
 
-				if (arr[j] > arr[i]) {
+				int thanos = (j - 1) / 2;
 
-					int thanos = i / 2;
+				if (arr[j] > arr[i]) {
 
 					for (int k = 0; k < thanos; k++) {
 
@@ -55,8 +55,19 @@ public class ThanosSorter extends Sorter {
 
 					}
 
+					if (arr[thanos + j] > arr[thanos + i]) {
+						
+						int newthanos = (thanos - 1) / 2;
+						
+						for (int k = newthanos; k < arr.length; k++) {
+
+							arr[k] = 0;
+
+						}
+						
+					}
+
 				}
-				
 
 			}
 

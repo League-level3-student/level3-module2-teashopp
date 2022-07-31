@@ -55,19 +55,8 @@ public class ThanosSorter extends Sorter {
 
 					}
 
-					if (arr[thanos + j] > arr[thanos + i]) {
-						
-						int newthanos = (thanos - 1) / 2;
-						
-						for (int k = newthanos; k < arr.length; k++) {
-
-							arr[k] = 0;
-
-						}
-						
-					}
-
 				}
+			
 
 			}
 

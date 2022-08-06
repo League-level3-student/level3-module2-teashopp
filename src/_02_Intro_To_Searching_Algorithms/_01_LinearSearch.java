@@ -14,20 +14,13 @@ public class _01_LinearSearch {
     	
     	for (int i = 0; i < words.length; i++) {
 			
-    		
-    		if() {
-    			
-    			return 0;
-    			
-    		}
-    		
-    		else {
-    			
-    			return -1;
-    			
+    		if(words[i].equals(value)) {
+    			return i;	
     		}
     		
 		}
+    	
+		return -1;
 
     }
 }

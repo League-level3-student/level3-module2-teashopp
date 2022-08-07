@@ -8,22 +8,21 @@ import java.util.List;
 import org.junit.Test;
 
 public class _01_SearchingAndSortingAlgorithmsTest {
-    /*
-     * Create the methods in the Algorithm class so that it will make the
-     * following tests pass. When you get a green bar, uncomment the next
-     * test until you have solved them all. Expand your vocabulary while
-     * you're at it.
-     */
+	/*
+	 * Create the methods in the Algorithm class so that it will make the following
+	 * tests pass. When you get a green bar, uncomment the next test until you have
+	 * solved them all. Expand your vocabulary while you're at it.
+	 */
 
-    // 1. Create a method that will find and return the first index of a broken egg
-//    @Test
-//    public void testSearch() {
-//        List<String> eggs = Arrays.asList(new String[] { "whole", "whole", "whole", "whole",
-//                "cracked", "whole", "whole", "whole", "cracked", "whole", "whole", "whole" });
-//        assertEquals(4, Algorithms.findBrokenEgg(eggs));
-//    }
+	// 1. Create a method that will find and return the first index of a broken egg
+	@Test
+	public void testSearch() {
+		List<String> eggs = Arrays.asList(new String[] { "whole", "whole", "whole", "whole", "cracked", "whole",
+				"whole", "whole", "cracked", "whole", "whole", "whole" });
+		assertEquals(4, Algorithms.findBrokenEgg(eggs));
+	}
 
-    // 2. Count how many oysters contain pearls
+	// 2. Count how many oysters contain pearls
 //    @Test
 //    public void testSearchAndAccumulate() throws Exception {
 //        List<Boolean> oysters = Arrays
@@ -33,7 +32,7 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals(2, Algorithms.countPearls(oysters));
 //    }
 
-    // 3. Create a method that will return the height of the tallest person.
+	// 3. Create a method that will return the height of the tallest person.
 //    @Test
 //    public void testFindMaxiumum() throws Exception {
 //        List<Double> peeps = Arrays
@@ -42,7 +41,7 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals(6.6, Algorithms.findTallest(peeps), 0.0);
 //    }
 
-    // 4. Create a method that will find the longest word.
+	// 4. Create a method that will find the longest word.
 //    @Test
 //    public void testFindMaxiumumString() throws Exception {
 //        List<String> words = Arrays.asList(new String[] { "accoutrements", "acumen", "anomalistic", "auspicious",
@@ -54,8 +53,8 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals("circumlocution", Algorithms.findLongestWord(words));
 //    }
 
-    // 5. The Morse code for SOS is "... --- ..."
-    // Create a method that can tell if SOS is contained in a message.
+	// 5. The Morse code for SOS is "... --- ..."
+	// Create a method that can tell if SOS is contained in a message.
 //    @Test
 //    public void testFindString() throws Exception {
 //        List<String> message1 = Arrays.asList(".... . .-. .-. --- / ... --- ... / -.-- .- .-.. .-.. ...".split(" / "));
@@ -66,9 +65,9 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals(false, Algorithms.containsSOS(message2));
 //    }
 
-    // 6. Write a Morse code translator to read the messages. Just kidding!
+	// 6. Write a Morse code translator to read the messages. Just kidding!
 
-    // 7. Sort the exam results from lowest to highest.
+	// 7. Sort the exam results from lowest to highest.
 //    @Test
 //    public void testSort() throws Exception {
 //        List<Double> results = Arrays.asList(
@@ -78,7 +77,7 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals(95.0, Algorithms.sortScores(results).get(13), 0.0);
 //    }
 
-    // 8. Sort the DNA sequences by length from shortest to longest.
+	// 8. Sort the DNA sequences by length from shortest to longest.
 //    @Test
 //    public void testSortStringLength() throws Exception {
 //        List<String> unsortedSequences = Arrays.asList(new String[] { "ATAGCTGATCGTAGCTACGTACGATCG", "CATCGTACATGC",
@@ -88,8 +87,8 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 //        assertEquals(sortedSequences, Algorithms.sortDNA(unsortedSequences));
 //    }
 
-    // 9. Sort the words in alphabetical order. Your teacher may need to
-    // explain the compareTo() method.
+	// 9. Sort the words in alphabetical order. Your teacher may need to
+	// explain the compareTo() method.
 //    @Test
 //    public void testSortStringContents() throws Exception {
 //        List<String> words = Arrays

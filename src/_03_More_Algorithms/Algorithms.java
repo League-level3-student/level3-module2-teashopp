@@ -45,16 +45,15 @@ public class Algorithms {
 		// TODO Auto-generated method stub
 
 		Double tall = peeps.get(0);
-		
 
-			for (int j = 0; j < peeps.size(); j++) {
+		for (int j = 0; j < peeps.size(); j++) {
 
-				if (peeps.get(j) > tall) {
-					
-					tall = peeps.get(j);
-					
-				}				
+			if (peeps.get(j) > tall) {
+
+				tall = peeps.get(j);
+
 			}
+		}
 
 		return tall;
 	}

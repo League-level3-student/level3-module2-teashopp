@@ -58,4 +58,58 @@ public class Algorithms {
 		return tall;
 	}
 
+	public static String findLongestWord(List<String> words) {
+		// TODO Auto-generated method stub
+
+		String L = words.get(0);
+
+		for (int i = 0; i < words.size(); i++) {
+
+			if (words.get(i).length() > L.length()) {
+
+				L = words.get(i);
+
+			}
+
+		}
+
+		return L;
+
+	}
+
+	public static boolean containsSOS(List<String> message1) {
+		// TODO Auto-generated method stub
+
+		for (int i = 0; i < message1.size(); i++) {
+
+			if (message1.get(i).contentEquals("... --- ...")) {
+
+				return true;
+
+			}
+
+		}
+
+		return false;
+
+	}
+
+	public static List<String> sortScores(List<Double> results) {
+		// TODO Auto-generated method stub
+
+		for (int i = 0; i < results.size(); i++) {
+
+			for (int j = 0; j < results.size(); j++) {
+
+				if (results.get(j) > results.get(i)) {
+
+				}
+
+			}
+
+		}
+
+		return null;
+	}
+
 }

@@ -1,6 +1,7 @@
 package _03_More_Algorithms;
 
 import java.io.ObjectInputStream.GetField;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -94,22 +95,39 @@ public class Algorithms {
 
 	}
 
-	public static List<String> sortScores(List<Double> results) {
+	public static List<Double> sortScores(List<Double> results) {
 		// TODO Auto-generated method stub
-
+		
+		// create new list
+		List<Double> newlist = new ArrayList<Double>();
+		
 		for (int i = 0; i < results.size(); i++) {
-
+			
+			// create saved smallest
+			Double small = results.get(i);
+			
 			for (int j = 0; j < results.size(); j++) {
 
-				if (results.get(j) > results.get(i)) {
+				if (results.get(j) < results.get(i)) {
+					
+					// set smallest as smaller value
+					small = results.get(j);
 
 				}
-
+				
 			}
 
+			// remove small from results
+			results.remove(small);
+			
+			// add small to newlist
+			newlist.add(small);
+			
 		}
 
-		return null;
+		// return newlist
+		return newlist;
+		
 	}
 
 }

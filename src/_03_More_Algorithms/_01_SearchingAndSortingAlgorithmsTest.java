@@ -75,6 +75,8 @@ public class _01_SearchingAndSortingAlgorithmsTest {
 		assertEquals(95.0, Algorithms.sortScores(results).get(13), 0.0);
 	}
 
+	
+
 	// 8. Sort the DNA sequences by length from shortest to longest.
 //    @Test
 //    public void testSortStringLength() throws Exception {

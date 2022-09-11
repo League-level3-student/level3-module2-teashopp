@@ -1,8 +1,13 @@
 package _03_More_Algorithms;
 
+import static org.junit.Assert.assertEquals;
+
 import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import org.junit.Test;
 
 /*
  * Write your methods in this class
@@ -98,36 +103,57 @@ public class Algorithms {
 	public static List<Double> sortScores(List<Double> results) {
 		// TODO Auto-generated method stub
 		
-		// create new list
 		List<Double> newlist = new ArrayList<Double>();
 		
 		for (int i = 0; i < results.size(); i++) {
 			
-			// create saved smallest
 			Double small = results.get(i);
 			
 			for (int j = 0; j < results.size(); j++) {
 
 				if (results.get(j) < results.get(i)) {
 					
-					// set smallest as smaller value
 					small = results.get(j);
 
 				}
+
+				results.remove(small);	
+				newlist.add(small);
 				
 			}
 
-			// remove small from results
-			results.remove(small);
-			
-			// add small to newlist
-			newlist.add(small);
-			
 		}
 
-		// return newlist
 		return newlist;
 		
+	}
+	
+	
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		
+		List<String> newstring = new ArrayList<String>();
+		
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+			
+			String small = unsortedSequences.get(i);
+			
+			for (int j = 0; j < unsortedSequences.size(); j++) {
+				
+				if(unsortedSequences.get(j).length() < unsortedSequences.get(i).length()) {
+					
+					small = unsortedSequences.get(j);
+					
+				}
+				
+				newstring.add(small);
+				
+			}
+			
+		}
+		
+		return newstring;
 	}
 
 }

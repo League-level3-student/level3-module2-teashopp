@@ -103,57 +103,138 @@ public class Algorithms {
 	public static List<Double> sortScores(List<Double> results) {
 		// TODO Auto-generated method stub
 		
-		List<Double> newlist = new ArrayList<Double>();
+		List<Double> newresults = new ArrayList<Double>();
 		
 		for (int i = 0; i < results.size(); i++) {
+		
+			newresults.add(results.get(i));
 			
-			Double small = results.get(i);
+		}
+				
+		boolean isordered = false;
+		
+		while (isordered == false) {
 			
-			for (int j = 0; j < results.size(); j++) {
+			isordered = true;
+			
+			for (int j = newresults.size() - 1; j > 0; j--) {
 
-				if (results.get(j) < results.get(i)) {
+				if (newresults.get(j) < newresults.get(j - 1)) {
 					
-					small = results.get(j);
-
+					Double small = newresults.get(j-1);
+					isordered = false;
+					newresults.remove(j-1);	
+					newresults.add(small);
+					
 				}
+				
+			}
+			
+		}
 
-				results.remove(small);	
-				newlist.add(small);
+		System.out.println(newresults);
+		
+		return newresults;
+		
+	}
+
+	 public static Object sortDNA(List<String> unsortedSequences) {
+		 
+		 List<String> newsequence = new ArrayList<String>();
+			
+			for (int i = 0; i < unsortedSequences.size(); i++) {
+			
+				newsequence.add(unsortedSequences.get(i));
+				
+			}
+					
+			boolean isordered = false;
+			
+			while (isordered == false) {
+				
+				isordered = true;
+				
+				for (int j = newsequence.size() - 1; j > 0; j--) {
+
+					if (newsequence.get(j).length() < newsequence.get(j - 1).length()) {
+						
+						String small = newsequence.get(j-1);
+						isordered = false;
+						newsequence.remove(j-1);	
+						newsequence.add(small);
+						
+					}
+					
+				}
 				
 			}
 
-		}
-
-		return newlist;
+			System.out.println(newsequence);
+			
+			return newsequence;
 		
 	}
-	
-	
 
-	public static Object sortDNA(List<String> unsortedSequences) {
+	public static List<String> sortWords(List<String> words) {
 		// TODO Auto-generated method stub
 		
-		List<String> newstring = new ArrayList<String>();
-		
-		for (int i = 0; i < unsortedSequences.size(); i++) {
+		 List<String> newwords = new ArrayList<String>();
 			
-			String small = unsortedSequences.get(i);
+			for (int i = 0; i < words.size(); i++) {
 			
-			for (int j = 0; j < unsortedSequences.size(); j++) {
+				newwords.add(newwords.get(i));
 				
-				if(unsortedSequences.get(j).length() < unsortedSequences.get(i).length()) {
+			}
 					
-					small = unsortedSequences.get(j);
+			boolean isordered = false;
+			
+			while (isordered == false) {
+				
+				isordered = true;
+				
+				for (int j = newwords.size() - 1; j > 0; j--) {
+
+					if(newwords.get(j).compareTo(newwords.get(j - 1)) > 0) {
+						
+						String first = newwords.get(j);
+						isordered = false;
+						newwords.remove(j);	
+						newwords.add(first);
+						
+					}
 					
 				}
 				
-				newstring.add(small);
-				
 			}
+
+			System.out.println(newwords);
 			
-		}
+			return newwords;
 		
-		return newstring;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/* 
+	  
+	  public void testSortStringContents() throws Exception {
+        List<String> words = Arrays
+                .asList(new String[] { "aby", "dap", "alt", "alb", "ama", "ard", "ana", "ala", "awn", "dah", "bar",
+                        "bee", "bel", "bot", "bis", "cep", "alk", "cog", "col", "cwm", "dag", "ait", "dal", "daw" });
+        assertEquals("aby", Algorithms.sortWords(words).get(0));
+        assertEquals("bar", Algorithms.sortWords(words).get(10));
+        assertEquals("daw", Algorithms.sortWords(words).get(words.size() - 1));
+    }
+    
+    
+	*/
 
 }

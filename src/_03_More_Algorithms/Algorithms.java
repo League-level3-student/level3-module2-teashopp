@@ -1,6 +1,7 @@
 package _03_More_Algorithms;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ObjectInputStream.GetField;
 import java.util.ArrayList;
@@ -13,10 +14,6 @@ import org.junit.Test;
  * Write your methods in this class
  */
 public class Algorithms {
-
-	public static String multiply(int num1, int num2) {
-		return null;
-	}
 
 	// test 1
 	public static int findBrokenEgg(List<String> eggs) {
@@ -102,116 +99,139 @@ public class Algorithms {
 
 	public static List<Double> sortScores(List<Double> results) {
 		// TODO Auto-generated method stub
-		
+
 		List<Double> newresults = new ArrayList<Double>();
-		
+
 		for (int i = 0; i < results.size(); i++) {
-		
+
 			newresults.add(results.get(i));
-			
+
 		}
-				
+
 		boolean isordered = false;
-		
+
 		while (isordered == false) {
-			
+
 			isordered = true;
-			
+
 			for (int j = newresults.size() - 1; j > 0; j--) {
 
 				if (newresults.get(j) < newresults.get(j - 1)) {
-					
-					Double small = newresults.get(j-1);
+
+					Double small = newresults.get(j - 1);
 					isordered = false;
-					newresults.remove(j-1);	
+					newresults.remove(j - 1);
 					newresults.add(small);
-					
+
 				}
-				
+
 			}
-			
+
 		}
 
-		System.out.println(newresults);
-		
 		return newresults;
-		
+
 	}
 
-	 public static Object sortDNA(List<String> unsortedSequences) {
-		 
-		 List<String> newsequence = new ArrayList<String>();
-			
-			for (int i = 0; i < unsortedSequences.size(); i++) {
-			
-				newsequence.add(unsortedSequences.get(i));
-				
-			}
-					
-			boolean isordered = false;
-			
-			while (isordered == false) {
-				
-				isordered = true;
-				
-				for (int j = newsequence.size() - 1; j > 0; j--) {
+	public static Object sortDNA(List<String> unsortedSequences) {
 
-					if (newsequence.get(j).length() < newsequence.get(j - 1).length()) {
-						
-						String small = newsequence.get(j-1);
-						isordered = false;
-						newsequence.remove(j-1);	
-						newsequence.add(small);
-						
-					}
-					
+		List<String> newsequence = new ArrayList<String>();
+
+		for (int i = 0; i < unsortedSequences.size(); i++) {
+
+			newsequence.add(unsortedSequences.get(i));
+
+		}
+
+		boolean isordered = false;
+
+		while (isordered == false) {
+
+			isordered = true;
+
+			for (int j = newsequence.size() - 1; j > 0; j--) {
+
+				if (newsequence.get(j).length() < newsequence.get(j - 1).length()) {
+
+					String small = newsequence.get(j - 1);
+					isordered = false;
+					newsequence.remove(j - 1);
+					newsequence.add(small);
+
 				}
-				
+
 			}
 
-			System.out.println(newsequence);
-			
-			return newsequence;
-		
+		}
+
+		return newsequence;
+
 	}
 
 	public static List<String> sortWords(List<String> words) {
 		// TODO Auto-generated method stub
-		
-		 List<String> newwords = new ArrayList<String>();
-			
-			for (int i = 0; i < words.size(); i++) {
-			
-				newwords.add(newwords.get(i));
-				
-			}
-					
-			boolean isordered = false;
-			
-			while (isordered == false) {
-				
-				isordered = true;
-				
-				for (int j = newwords.size() - 1; j > 0; j--) {
 
-					if(newwords.get(j).compareTo(newwords.get(j - 1)) > 0) {
-						
-						String first = newwords.get(j);
-						isordered = false;
-						newwords.remove(j);	
-						newwords.add(first);
-						
-					}
-					
+		List<String> newwords = new ArrayList<String>();
+
+		for (int i = 0; i < words.size(); i++) {
+
+			newwords.add(words.get(i));
+
+		}
+
+		boolean isordered = false;
+
+		while (isordered == false) {
+
+			isordered = true;
+
+			for (int j = newwords.size() - 1; j > 0; j--) {
+
+				if (newwords.get(j).compareTo(newwords.get(j - 1)) > 0) {
+
+					String first = newwords.get(j);
+					isordered = false;
+					newwords.remove(j);
+					newwords.add(first);
+
 				}
-				
+
 			}
 
-			System.out.println(newwords);
-			
-			return newwords;
-		
+		}
+
+		return newwords;
+
 	}
+
+	public static String multiply(int val1, int val2) {
+
+		int val3 = val1 * val2;
+
+		String answer = val1 + " x " + val2 + " = " + val3;
+
+		return answer;
+
+	}
+
+	public static boolean isPrime(int i) {
+		// TODO Auto-generated method stub
+		
+		boolean ft = false;
+		
+		for (int j = i / 2; j > 0; j--) {
+			
+			if((j % i) == 0) {
+				
+				ft = true;
+				
+			}
+			
+		}
+		
+		return ft;
+	}
+
 	
 	
 	
@@ -223,18 +243,9 @@ public class Algorithms {
 	
 	
 	
-	/* 
-	  
-	  public void testSortStringContents() throws Exception {
-        List<String> words = Arrays
-                .asList(new String[] { "aby", "dap", "alt", "alb", "ama", "ard", "ana", "ala", "awn", "dah", "bar",
-                        "bee", "bel", "bot", "bis", "cep", "alk", "cog", "col", "cwm", "dag", "ait", "dal", "daw" });
-        assertEquals("aby", Algorithms.sortWords(words).get(0));
-        assertEquals("bar", Algorithms.sortWords(words).get(10));
-        assertEquals("daw", Algorithms.sortWords(words).get(words.size() - 1));
-    }
-    
-    
-	*/
+	
+	
+	
+
 
 }

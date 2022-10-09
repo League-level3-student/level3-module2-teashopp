@@ -216,36 +216,54 @@ public class Algorithms {
 
 	public static boolean isPrime(int i) {
 		// TODO Auto-generated method stub
-		
-		boolean ft = false;
-		
-		for (int j = i / 2; j > 0; j--) {
-			
-			if((j % i) == 0) {
-				
-				ft = true;
-				
+
+		boolean prime = true;
+
+		int half = i / 2;
+
+		for (int j = half; j > 1; j--) {
+
+			if ((i % j) == 0) {
+
+				prime = false;
+
 			}
+
+		}
+
+		return prime;
+	}
+
+	public static boolean isSquare(int i) {
+		// TODO Auto-generated method stub
+		
+		boolean square = false;
+		
+		int find = (int) Math.sqrt(i);
+		
+		if(Math.pow(find,2) == i) {
+			
+			square = true;
 			
 		}
 		
-		return ft;
+		return square;
 	}
 
+	public static boolean isCube(int i) {
+		// TODO Auto-generated method stub
+		
+		boolean cube = false;
+		
+		int find = (int) Math.cbrt(i);
+		
+		if(Math.pow(find, 3) == i) {
+			
+			cube = true;
+			
+		}
+		
+		return cube;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 }
